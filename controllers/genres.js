@@ -11,5 +11,4 @@ class genresControllers {
   }
 }
 
-
-module.exports = new genresControllers()
+module.exports = new genresControllers();

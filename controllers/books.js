@@ -1,4 +1,5 @@
 const Book = require('../models/Book');
+
 const controllers = {
   getBooks: async (req, res) => {
     const books = await Book.findById({
@@ -13,16 +14,19 @@ const controllers = {
     res.json(bookGenreId)
   },
   getBooksRandom: async (req, res) =>{
-    //const randomBooks = await Book.find({})
-    res.json(randomBook(Book, 6))
+    const randomBooks = await Book
+    .find()
+    .limit(6)
+    res.json(randomBooks)
   }
-}
-function randomBook(data, count){
-  let bookCount = [];
-  for (let i = 0; i < count; i++) {
-    bookCount.push(Math.floor(Math.random() * data.length));
-  }
-  return bookCount;
+
+  // getBooksRandom: async (req, res) => {
+  //    const randomBook = (count) => {
+  //     Book.findRandom().limit(3).exec(function (error, result) {
+  //       res.json(result);  // -> []
+  //     })
+  //   }
+  // }
 }
 module.exports = controllers;
 

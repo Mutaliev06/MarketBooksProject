@@ -3,6 +3,6 @@ const genresController = require("../controllers/genres")
 
 const router = Router()
 
-router.patch('/genres', genresController.getGenres)
+router.get('/genres', genresController.getGenres)
 
 module.exports = router

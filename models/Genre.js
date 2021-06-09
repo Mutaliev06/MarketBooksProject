@@ -6,4 +6,4 @@ const schema = new Schema({
   updateAt: Date
 })
 
-module.exports = model('Genre', schema)
+module.exports = model('genre', schema)
