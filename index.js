@@ -2,11 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const fileupload = require('express-fileupload');
 const cors = require('cors')
+const router = require('./routes/index')
 
 const app = express();
 const { port, url } = require('./config/index')
 
-const router = require('./routes/index')
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(fileupload());

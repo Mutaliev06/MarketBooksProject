@@ -1,12 +1,15 @@
 const {Schema, model} = require('mongoose')
 
 const schema = new Schema({
-  userName: String,
   text: String,
   book:{
-    ref: 'Book',
+    ref: 'book',
     type: Schema.Types.ObjectId
   },
+  userName: String,
   createdAt: Date,
   updatedAt: Date,
 })
+
+
+module.exports = model("review", schema);
