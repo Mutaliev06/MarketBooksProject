@@ -16,7 +16,8 @@ const reviewController =  {
       try {
         const review = new Review({
           text: req.body.text,
-          userName: req.body.userName
+          userName: req.body.userName,
+          book: req.params.id
         })
         await review.save()
         res.json(review)
