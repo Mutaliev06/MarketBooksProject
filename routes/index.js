@@ -7,4 +7,6 @@ router.use(require('./reviews'));
 
 router.use(require('./genres'));
 
+router.use(require('./upload'));
+
 module.exports = router;

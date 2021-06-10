@@ -1,3 +1,4 @@
+const path = require('path');
 const Book = require('../models/Book');
 
 const controllers = {
@@ -18,15 +19,17 @@ const controllers = {
     .find()
     .limit(6)
     res.json(randomBooks)
+  },
+  uploadImage: async (req, res) => {
+    const newFile = `${Math.random() * 100000}${path.extname(req.file.image.name)}`;
+    await req.files.image.mv(newFile, (err) => {
+    if(err){
+      console.log(err)
+    } else {
+      res.json("Файл загружон")
+    }
+  })
   }
-
-  // getBooksRandom: async (req, res) => {
-  //    const randomBook = (count) => {
-  //     Book.findRandom().limit(3).exec(function (error, result) {
-  //       res.json(result);  // -> []
-  //     })
-  //   }
-  // }
 }
 module.exports = controllers;
 
