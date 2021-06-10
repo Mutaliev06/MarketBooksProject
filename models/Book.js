@@ -10,6 +10,7 @@ const schema = new Schema({
     ref: "genre",
     type: Schema.Types.ObjectId,
   },
+  pathToImage: String,
   createdAt: Date,
   updatedAt: Date,
 })
