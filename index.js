@@ -7,11 +7,11 @@ const router = require('./routes/index')
 const app = express();
 const { port, url } = require('./config/index')
 
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(fileupload());
 app.use(router)
-app.use(cors())
 
 async function start () {
   try {
